@@ -1,0 +1,127 @@
+/* Estilos de etiqueta*/
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+*{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background: #96BDC6;
+}
+h1,h2{
+    text-align: center;
+}
+
+.aside{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.main-title{
+  color: #222;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.7em 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container{
+  width:80%;
+  overflow:hidden;
+  margin: 0px auto;
+  display: flex;
+}
+.left{
+  float:left;
+  width:100%;
+  margin:5px;
+  text-align:center;
+}
+
+
+form fieldset{
+  border:0;
+  font-size:12px;
+}
+
+input{
+  height: 23px;
+}
+
+
+input{
+  margin: 5px auto;
+  padding:10px 0px 10px 10px;
+  border:0;
+  text-align:left;
+  background-color:#EFEBE9;
+  color:#616161;
+  width: 500px;
+}
+
+input:focus{
+  background: #ccc;
+}
+
+  table {
+    background: white;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  th {
+    background-color: rgba(5, 5, 100, 95);
+    height: 35px;
+    border-bottom: 1px solid rgb(210, 220, 250);
+    color: rgb(120, 120, 120);
+  }
+  
+  td {
+    color: rgba(100, 100, 100, 60);
+    height: 30px;
+    border: 0.5px solid rgba(240, 240, 240, 10);
+  }
+  
+  tfoot {
+    font-weight: bold;
+  }
+  
+  /*Pseudo-clases*/
+  th:hover {
+    background-color: rgba(20, 20, 20, 90);
+  }
+  
+  tr:hover {
+    background-color: rgba(15, 25, 25, 90);
+  }
+  
+  /* Estililos de clases*/
+  .PrecioTotal:hover,
+  .CantidadTotal:hover {
+    color: rgb(230, 50, 50);
+  }
+  
+  .Cabecera {
+    background-color: rgba(5, 5, 100, 0.99);
+    border-radius: 4px;
+    height: 30px;
+    padding: 2em;
+    margin: 0 25%;
+    text-align: center;
+    color: white;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 14pt;
+  }
+  
+  footer {
+    margin-top: 40px;
+    text-align: center;
+  }
