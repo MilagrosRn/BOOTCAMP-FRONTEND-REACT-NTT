@@ -1,4 +1,4 @@
-
+/* Como sugerencia puedes considerar seguir metodologías como BEM u OSCSS para la nomenclatura de clases */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,6 +21,8 @@ body {
     justify-content: space-around;
     width: 50%;
 }
+
+/* ambos estilos hacen uso del tamaño 50px por qué no crear una clase compartida o una clase que se use de manera general para evitar repitar el mismo estilo? */
 .left-container .logo{
     height: 50px;
 }
@@ -39,22 +41,26 @@ body {
   
   .searchTerm {
     width: 100%;
+    /* los colores podrían estar definidas como variable en el root del css3 para mantener un orden y reutilizarlos */
     border: 3px solid #80e591;
     border-right: none;
     padding: 5px;
     min-height: 40px;
     border-radius: 5px 0 0 5px;
     outline: none;
+    /* los colores podrían estar definidas como variable en el root del css3 para mantener un orden y reutilizarlos */
     color: #9DBFAF;
   }
   
   .searchTerm:focus{
+    /* los colores podrían estar definidas como variable en el root del css3 para mantener un orden y reutilizarlos */
     color: #80e591;
   }
   
   .searchButton {
     width: 40px;
     height: 36px;
+    /* los colores podrían estar definidas como variable en el root del css3 para mantener un orden y reutilizarlos */
     border: 1px solid #80e591;
     background: #80e591;
     text-align: center;
@@ -104,6 +110,7 @@ body {
     }
     .check-card .check-card-item {
          display: flex;
+         /* no dejar código que no se usa */
         /* width: 100%; */
         margin: 0 1% 15px;
         font-size: 16px;
@@ -119,6 +126,7 @@ body {
         cursor: pointer;
     }
     .check-card .check-card-body {
+        /* no dejar código que no se usa */
         /* height: 300px; */
         color: #fff;
         z-index: 2;
@@ -167,6 +175,7 @@ body {
         font-size: 0.9em;
         font-weight: bold;
         color: white;
+        /* los colores podrían estar definidas como variable en el root del css3 para mantener un orden y reutilizarlos */
         background-color: #00ba9f; /* Color de fondo */
         border-radius: 12px; /* Bordes redondeados */
         text-transform: uppercase;
@@ -181,6 +190,8 @@ body {
   background: white;
   position: relative;
 }
+
+/* no encontre donde se las clases que están debajo, si no se usan eliminas porque sino estarías agregando código innecesario al build final */
 .footer-cta {
   border-bottom: 1px solid #7d9561;
 }
@@ -294,6 +305,7 @@ body {
     width: 20%;
 }
 /* Queries */
+/* podrías considerar usar rangos https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488 */
     @media (min-width:768px) {
         grid-template:
             "header " 50px
