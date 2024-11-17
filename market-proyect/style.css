@@ -91,6 +91,11 @@ border-radius: 9px;
 .custom-select{
   font-size: 1rem;
   display: flex;
+  margin: 20px;
+  justify-content: space-around;
+}
+.custom-select select{
+  width: 50%;
 }
 /* grid */
 .grid-container>* {
@@ -129,13 +134,18 @@ border-radius: 9px;
       /* margin: 40px auto; */
       /* min-width: 320px; */
       padding: 0;
+      display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .check-card .check-card-item {
        display: flex;
-      /* width: 100%; */
+      width: 49%;
       margin: 0 0 15px;
       font-size: 16px;
       background:#a0a884;
+      padding: 2%;
       overflow: hidden;
   }
   .check-card li label {
@@ -437,10 +447,14 @@ animation: bottomBubbles ease-in-out 0.75s forwards;
 
   }
   @media (max-width:768px){ 
+    .check-card{
+      flex-direction: column;
+      
+    }
       .check-card .check-card-item{
       display: flex;
       flex-direction: column;
-
+width: 100%;
   }
 .img-prod{
   width: 100%;

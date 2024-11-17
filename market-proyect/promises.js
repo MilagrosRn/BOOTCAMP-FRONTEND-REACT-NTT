@@ -42,4 +42,4 @@ const searchProduct= async ()=>{
 //     console.error('Hubo un error:', error);
 //   });
 
-searchProduct()
+export {productsShow,getAllProducts,searchProduct}
