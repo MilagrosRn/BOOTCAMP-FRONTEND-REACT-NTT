@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -22,13 +21,20 @@ body {
     width: 50%;
 }
 .left-container .logo{
-    height: 50px;
+   height: 50px;
 }
 .right-container img{
     height: 50px;
 }
 .logo-txt{
     align-self: center;
+}
+.badge-counter {
+  background-color: #00ba9f;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 9px;
 }
 .search {
     width: 70%;
@@ -39,24 +45,24 @@ body {
   
   .searchTerm {
     width: 100%;
-    border: 3px solid #80e591;
+    border: none;
     border-right: none;
     padding: 5px;
-    min-height: 40px;
+    min-height: 36px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    color: #9DBFAF;
+    color: black;
   }
   
   .searchTerm:focus{
-    color: #80e591;
+    color: #ff0081;
   }
   
   .searchButton {
     width: 40px;
-    height: 36px;
-    border: 1px solid #80e591;
-    background: #80e591;
+    height: 35px;
+    border: 1px solid #ff0081;
+    background: #ff0081;
     text-align: center;
     color: #fff;
     border-radius: 0 5px 5px 0;
@@ -66,6 +72,16 @@ body {
   .searchButton img{
     width: 30px;
   }
+  .main-tittle{
+    margin: 10px
+  }
+
+  /* select */
+  .custom-select{
+    font-size: 1rem;
+    display: flex;
+  }
+  /* grid */
 .grid-container>* {
     box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
     border-radius: 2px;
@@ -94,20 +110,21 @@ body {
 
     .footer {
         grid-area: footer;
-        background-color: #80e591;
+        background-color: #f4fae0;
     }
     /* tarjetas */
     .check-card {
         list-style: none;
-        margin: 40px auto;
-        min-width: 320px;
+        /* margin: 40px auto; */
+        /* min-width: 320px; */
+        padding: 0;
     }
     .check-card .check-card-item {
          display: flex;
         /* width: 100%; */
-        margin: 0 1% 15px;
+        margin: 0 0 15px;
         font-size: 16px;
-        background: #245229;
+        background:#a0a884;
         overflow: hidden;
     }
     .check-card li label {
@@ -124,8 +141,9 @@ body {
         z-index: 2;
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
     }
      .check-card-body-in {
         padding: 40px 20px 20px;
@@ -133,7 +151,7 @@ body {
     }
     .check-card .check-card-title {
         font-family: 'Oswald', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin: 10px;
     }
     .check-card .check-card-bg,
@@ -156,7 +174,9 @@ body {
         transform:scale(1);
         z-index: 0;
     }
-    
+    .check-card-description{
+      font-size: 1.2rem;
+    }
     
     .img-prod{
         width: 140px;
@@ -290,8 +310,100 @@ body {
   color: #878787;
 }
 
+/* boton */
+body {
+  font-size: 16px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-align: center;
+  background-color: #f8faff;
+}
+
+.bubbly-button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 16px;
+  margin-bottom: 1%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ff0081;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+}
+.bubbly-button:focus {
+  outline: 0;
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #e60074;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+
 .img-redes{
     width: 20%;
+    margin-top: 15px;
 }
 /* Queries */
     @media (min-width:768px) {
