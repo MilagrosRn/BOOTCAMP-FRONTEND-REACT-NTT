@@ -8,8 +8,9 @@ import {
 } from "./scripts/pureFunctions.js";
 import * as PromisesJS from "./scripts/promises.js";
 
-// const productsList = document.getElementById("productsList");
+const searchInput = document.querySelector('.searchTerm');
 const categorySelect = document.getElementById("categorySelect");
+
 
 //  traer productos
 PromisesJS.getAllProducts()
@@ -28,6 +29,20 @@ PromisesJS.getAllProducts()
       // Renderizar los productos filtrados
       renderProducts(filteredProductsByCategory(products, selectedText));
     });
+
+
+    searchInput.addEventListener('input', (event) => {
+      // Convertir a minúsculas
+      const query = event.target.value.toLowerCase(); 
+      const filteredProducts = products.filter(product => 
+        product.title.toLowerCase().includes(query) || 
+        product.description.toLowerCase().includes(query) ||
+        product.category.toLowerCase().includes(query)
+      );
+      renderProducts(filteredProducts); 
+    });
+
+
   })
   .catch((error) => {
     console.error(error);

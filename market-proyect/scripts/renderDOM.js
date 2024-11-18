@@ -1,5 +1,7 @@
 const productsList = document.getElementById('productsList'); 
 const categorySelect = document.getElementById('categorySelect');
+const badgeCounter = document.getElementById('badgeCounter');
+let cartCount = 0;
 
 export const renderProducts=(products) =>{
     
@@ -57,13 +59,22 @@ export const renderProducts=(products) =>{
       card.appendChild(containerImg);
   
       productsList.appendChild(card);
+
+      
+
+ 
+    });
+
+    const addToCartButtons = document.querySelectorAll('.bubbly-button');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        cartCount++;
+        badgeCounter.textContent = cartCount;
+      });
     });
   }
 
-export const renderCategoriesSelectInput =(formattedItems,products)=>{
-    
-
-   
+export const renderCategoriesSelectInput =(formattedItems,products)=>{   
     formattedItems.forEach(optionData => {
         const option = document.createElement('option');
         option.value = optionData.value;
