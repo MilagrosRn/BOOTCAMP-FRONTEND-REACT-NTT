@@ -18,7 +18,9 @@ const getAllProducts = () => {
       });
   });
 };
-
+const getAllCategories = () => {
+  return new Promise((resolve, reject) => {})
+}
 const searchProduct= async ()=>{
     try{ 
     const resp=  await fetch('https://dummyjson.com/products/search?q=phone')
