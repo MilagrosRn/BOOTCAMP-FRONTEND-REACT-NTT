@@ -1,18 +1,18 @@
 
-# 🌱 Tienda de Plantas - Web Básica
+# 🌱 Market PLants - Web de productos
 
-¡Bienvenido/a a la Tienda de Plantas en Línea! Este proyecto es una página web sencilla desarrollada con HTML y CSS que permite a los usuarios explorar y adquirir diferentes tipos de plantas. Es un sitio ideal para los amantes de la jardinería que buscan encontrar plantas para su hogar o jardín.
+¡Bienvenido/a a la Tienda en Línea! Este proyecto es una página web sencilla desarrollada con HTML y CSS que permite a los usuarios explorar y adquirir diferentes tipos de productos.
 
 ## 📋 Descripción
 
-La Tienda de Plantas es una web básica que presenta una interfaz amigable y fácil de navegar para los usuarios que desean comprar plantas. Este proyecto se centra en el diseño sencillo y funcional utilizando HTML y CSS, y se enfoca en la presentación visual de los productos y una navegación simple.
+La Tienda de Plantas es una web básica que presenta una interfaz amigable y fácil de navegar para los usuarios que desean comprar productos categorizados en belleza,fragancias,muebleria y abarrotes.
 
 ### Características
 
 - Página de inicio con una descripción general de la tienda.
-- Catálogo de plantas con imágenes y breves descripciones de cada tipo de planta.
-- Sección de categorías para facilitar la búsqueda de plantas específicas (e.g., suculentas, plantas de interior, plantas de exterior).
-- Información para que los usuarios puedan hacer consultas o recibir asistencia.
+- Catálogo con imágenes y breves descripciones de cada tipo de producto.
+- Sección de categorías para facilitar la búsqueda
+- Barra de busqueda de productos reactiva
 - Diseño adaptable a dispositivos móviles para facilitar el acceso desde cualquier dispositivo.
 
 ## 📂 Estructura del Proyecto
@@ -21,10 +21,12 @@ La estructura de archivos de este proyecto es la siguiente:
 
 
 ```
-prototipo-esperado-entrega/
+market-proyect/
 ├── index.html            # Página principal
 ├── style.css         # Estilos de la web
-└── img/          # Carpeta con imágenes de las plantas e iconos
+├── main.js         # Logica centralizada en llamadas modularizadas entre archivos JS
+└── assets/          # Carpeta con imágenes de las plantas e iconos
+└── scripts/          # Carpeta con archivos JS modularizando la logica del codigo
 ```
 
 En el repositorio se encontraran otras carpetas desarrolladas en las sesiones teoricas en las que se baso el proyecto
@@ -36,12 +38,13 @@ En el repositorio se encontraran otras carpetas desarrolladas en las sesiones te
 
 ## 📸 Capturas de Pantalla
 ### movil
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Alt text](image-6.png)
+![Alt text](image-7.png)
 ### web
 
-![Alt text](image-2.png)
-![Alt text](image-3.png)
+![Alt text](image-4.png)
+![Alt text](image-5.png)
+![Alt text](image-8.png)
 ## 📄 Licencia
 
 Este proyecto se distribuye bajo la Licencia MIT, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
