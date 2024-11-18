@@ -24,9 +24,11 @@ La estructura de archivos de este proyecto es la siguiente:
 market-proyect/
 ├── index.html            # Página principal
 ├── style.css         # Estilos de la web
-├── main.js         # Logica centralizada en llamadas modularizadas entre archivos JS
+├── src/         # Logica centralizada en llamadas modularizadas entre archivos JS
+    └── scripts/          # Carpeta con archivos JS modularizando la logica del codigo
+    └── interfaces/          # Carpeta con interfaces
 └── assets/          # Carpeta con imágenes de las plantas e iconos
-└── scripts/          # Carpeta con archivos JS modularizando la logica del codigo
+
 ```
 
 En el repositorio se encontraran otras carpetas desarrolladas en las sesiones teoricas en las que se baso el proyecto
