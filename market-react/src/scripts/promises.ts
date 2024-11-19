@@ -1,4 +1,4 @@
-import { Product } from "@/interfaces/products";
+import { Product } from "../interfaces/products";
 
 const getAllProducts = ():Promise<Product[]> => {
   return new Promise((resolve, reject) => {
