@@ -73,7 +73,7 @@ export const renderProducts=(products) =>{
       });
     });
   }
-
+// eliminar parametros que no se usan
 export const renderCategoriesSelectInput =(formattedItems,products)=>{   
     formattedItems.forEach(optionData => {
         const option = document.createElement('option');

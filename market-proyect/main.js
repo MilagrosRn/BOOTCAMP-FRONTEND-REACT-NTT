@@ -1,3 +1,4 @@
+// a las imagenes de los productos se les superpone la imagen por defecto
 import {
   renderProducts,
   renderCategoriesSelectInput,
@@ -22,6 +23,7 @@ PromisesJS.getAllProducts()
   })
   .then((products) => {
     categorySelect.addEventListener("change", (event) => {
+      // eliminar lo que no se usa
       const selectedValue = event.target.value;
       const selectedText =
         event.target.options[event.target.selectedIndex].text;
@@ -34,6 +36,7 @@ PromisesJS.getAllProducts()
     searchInput.addEventListener('input', (event) => {
       // Convertir a minúsculas
       const query = event.target.value.toLowerCase(); 
+      // podrias usar un include en lugar de varios ||
       const filteredProducts = products.filter(product => 
         product.title.toLowerCase().includes(query) || 
         product.description.toLowerCase().includes(query) ||
