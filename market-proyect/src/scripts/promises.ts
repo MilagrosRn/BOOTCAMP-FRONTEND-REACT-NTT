@@ -1,6 +1,7 @@
 import { Product } from "@/interfaces/products";
 
 const getAllProducts = ():Promise<Product[]> => {
+  // por qu'e en un promise y en otro async await? hay que mantener un estandar 
   return new Promise((resolve, reject) => {
     fetch('https://dummyjson.com/products')
       .then(response => {
