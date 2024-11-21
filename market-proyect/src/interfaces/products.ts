@@ -23,6 +23,7 @@ export interface Product {
     images: string[]
   }
   
+  // una intefaz debe estar en singular
   export interface Dimensions {
     width: number
     height: number

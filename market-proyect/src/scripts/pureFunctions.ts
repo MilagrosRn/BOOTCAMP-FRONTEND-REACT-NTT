@@ -16,5 +16,6 @@ export const filteredProductsByCategory = (products:Product[], selectedText:stri
   if (selectedText === "Todas las categorías") {
     return products;
   }
-  return products.filter((product:Product) => product.category === selectedText);
+  // retorno implicito
+  return products.filter((product) => product.category === selectedText);
 };

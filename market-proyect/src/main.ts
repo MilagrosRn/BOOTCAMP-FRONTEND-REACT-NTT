@@ -15,6 +15,7 @@ import {
   
   
   //  traer productos
+  // las promesas encadenadas son buenas, pero podr'ia ser m'as f'acil de leer si se separar'a en funciones y cada una use un async y await
   PromisesJS.getAllProducts()
     .then((products: Product[]) : Product[] => {
       renderProducts(products);
