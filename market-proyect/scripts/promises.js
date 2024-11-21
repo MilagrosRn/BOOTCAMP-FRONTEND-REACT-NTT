@@ -18,6 +18,7 @@ const getAllProducts = () => {
       });
   });
 };
+// eliminar si no se usa
 const getAllCategories = () => {
   return new Promise((resolve, reject) => {})
 }
@@ -35,6 +36,7 @@ const searchProduct= async ()=>{
         console.error('Hubo un error al buscar el producto:', error);
     }
 }
+// no dejar c'odigo comentado
 // uso de la función then y catch tambien
 // getAllProducts()
 //   .then(products => {
