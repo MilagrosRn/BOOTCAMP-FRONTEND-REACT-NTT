@@ -1,5 +1,16 @@
 import React, { useRef} from 'react';
 import { useCartContext } from '../../context/cartContext';
+import {
+  HeaderElement,
+  LeftContainer,
+  Logo,
+  LogoText,
+  Search,
+  SearchInput,
+  SearchButton,
+  RightContainer,
+  BadgeCounter,
+} from "./Header.styled"; // Cambia la ruta según sea necesario
 
 interface HeaderProps {
     onSearch: (query: string) => void;
@@ -14,40 +25,27 @@ interface HeaderProps {
     };
   
   return (
-    <header className="header">
-      <div className="left-container">
-        <img className="logo" alt="Logo Plantas" src="../assets/plantas.png" />
-        <p className="logo-txt">Market Plants</p>
-        <div className="search">
-          <input
-            type="text"
-            className="searchTerm"
-            placeholder="¿Qué producto buscas?"
-            onChange={handleInputChange}
-          />
-          <button
-            id="searchButton"
-            className="searchButton"
-            type="submit"
-          >
-            <img src="../assets/lupa.png" alt="Buscar" />
-          </button>
-        </div>
-      </div>
-      <div className="right-container">
-        <span
-          id="badgeCounter"
-          className="badge-counter"
-          ref={badgeCounterRef} 
-        >{cartCount}
-        </span>
-        <img
-          className="logo"
-          alt="Icono Tienda"
-          src="../assets/tienda-de-comestibles.png"
+    <HeaderElement>
+    <LeftContainer>
+      <Logo alt="Logo Plantas" src="../assets/plantas.png" />
+      <LogoText>Market Plants</LogoText>
+      <Search>
+        <SearchInput
+          type="text"
+          placeholder="¿Qué producto buscas?"
+          onChange={handleInputChange}
         />
-      </div>
-    </header>
+        <SearchButton type="submit">
+          <img src="../assets/lupa.png" alt="Buscar" />
+        </SearchButton>
+      </Search>
+    </LeftContainer>
+
+    <RightContainer>
+      <BadgeCounter ref={badgeCounterRef}>{cartCount}</BadgeCounter>
+      <Logo alt="Icono Tienda" src="../assets/tienda-de-comestibles.png" />
+    </RightContainer>
+  </HeaderElement>
   );
 };
 

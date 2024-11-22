@@ -21,7 +21,7 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
-.header{
+/* .header{
   display: flex;
   justify-content: space-between;
 }
@@ -85,7 +85,7 @@ border-radius: 9px;
 }
 .main-tittle{
   margin: 10px
-}
+} */
 
 /* select */
 .custom-select{

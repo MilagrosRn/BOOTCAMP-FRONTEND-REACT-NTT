@@ -1,4 +1,3 @@
-// context/CartContext.tsx
 import React, { createContext, useContext } from "react";
 import useCart from "./useCart";
 
