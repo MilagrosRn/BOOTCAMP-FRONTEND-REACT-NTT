@@ -12,38 +12,36 @@ import {
 import { useCartContext } from '../../context/cartContext';
 import { CategoryItem } from '../../domain/categoryItem';
 import { mapCategories } from '../../shared/helpers/mapperCategories';
-import { filterProducts } from '../../shared/helpers/filterByProducts';
 
 interface ProductListProps {
     products: Product[];
+    allProducts: Product[];
+    onCategoryChange: (selectedText: string) => void; // Función para cambiar categoría
   }
-  
-  const ProductList: React.FC<ProductListProps> = ({ products }) => {
+  const ProductList: React.FC<ProductListProps> = ({ products, allProducts, onCategoryChange }) => {
     const { incrementCartCount } = useCartContext();
-    const categories: CategoryItem[] = mapCategories(products);
+    const categories: CategoryItem[] = mapCategories(allProducts);
     const [selectedCategory, setSelectedCategory] = useState<string>("Todas las categorías");
-    const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
-    const handleCategoryChange = (selectedText: string) => {
-        setSelectedCategory(selectedText);
-        const filtered = filterProducts(products, selectedText);
-        setFilteredProducts(filtered);
-      };
-          
+  
+    const handleCategorySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const selectedText = e.target.value;
+      setSelectedCategory(selectedText);
+      onCategoryChange(selectedText); 
+    };
+  
   return (
     <MainContainer>
       <div>
         <MainTitle>Nuestros productos de temporada</MainTitle>
         <CustomSelect>
           <h2>Categorías</h2>
-          <select  id="categorySelect"
-            value={selectedCategory}
-            onChange={(e) => handleCategoryChange(e.target.value)}>
-        {categories.map((category) => (
-          <option key={category.value} value={category.text}>
-            {category.text}
-          </option>
-        ))}
-      </select>
+          <select id="categorySelect" value={selectedCategory} onChange={handleCategorySelect}>
+            {categories.map((category) => (
+              <option key={category.value} value={category.text}>
+                {category.text}
+              </option>
+            ))}
+          </select>
         </CustomSelect>
       </div>
 

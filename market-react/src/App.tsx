@@ -5,36 +5,44 @@ import Header from "./componentes/header/Header";
 import Footer from "./componentes/footer/Footer";
 import ProductList from "./componentes/ProductList/ProductList";
 import { Product } from "./domain/products";
+import { filterProducts } from "./shared/helpers/filterByProducts";
 
 function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
-  // Cargar productos iniciales
   useEffect(() => {
     const loadProducts = async () => {
       const fetchedProducts = await getAllProducts();
-      setProducts(fetchedProducts); // Estado original de todos los productos
+      setProducts(fetchedProducts);
       setFilteredProducts(fetchedProducts); // Estado para productos filtrados
     };
 
     loadProducts();
   }, []);
 
-  // Manejar búsqueda dinámica
   const handleSearch = async (query: string) => {
     if (query.trim() === "") {
-      setFilteredProducts(products); 
+      setFilteredProducts(products);
     } else {
       const results = await searchProduct(query);
-      setFilteredProducts(results); 
+      setFilteredProducts(results);
     }
   };
 
+  // Manejar filtrado por categoría
+  const handleCategoryChange = (selectedText: string) => {
+    const filtered = filterProducts(products, selectedText);
+    setFilteredProducts(filtered);
+  };
   return (
     <CartProvider>
       <Header onSearch={handleSearch} />
-      <ProductList products={filteredProducts} />
+      <ProductList
+        products={filteredProducts} 
+        allProducts={products} 
+        onCategoryChange={handleCategoryChange}
+      />{" "}
       <Footer />
     </CartProvider>
   );
