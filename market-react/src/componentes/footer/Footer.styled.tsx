@@ -3,21 +3,24 @@ import styled from 'styled-components';
 export const FooterSection = styled.footer`
   background: white;
   position: relative;
-  text-align:center
+  text-align:center;
+  background-color: #f4fae0;
+}
 `;
 
 export const FooterMenu = styled.div`
+text-align: center;
     li{
     display: inline-block;
     margin-left: 20px;
     &:hover{
         color: #245229;
     }
-     a{
-        color: #878787;
-        font-size: 14px;
-    
-    }
+    a{
+      color: #878787;
+      font-size: 14px;
+  
+  }
 `;
 
 
@@ -26,30 +29,11 @@ export const FooterContent = styled.div`
   z-index: 2;
 `;
 
-export const FooterPattern = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 330px;
-  background-size: cover;
-  background-position: 100% 100%;
-
-  img {
-    height: 100%;
-    width: auto;
-  }
-`;
-
-export const FooterLogo = styled.div`
-  margin-bottom: 30px;
-
-  img {
-    max-width: 200px;
-  }
-`;
 
 export const FooterText = styled.div`
+
   p {
+    
     margin-bottom: 14px;
     font-size: 14px;
     color: #7e7e7e;
@@ -58,20 +42,15 @@ export const FooterText = styled.div`
 `;
 
 export const FooterWidget = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: center;
 
-  ul {
-    margin: 0;
+  img {
+    margin: 12px;
     padding: 0;
-    list-style: none;
-
-    li {
-      display: inline-block;
-      width: 50%;
-      margin-bottom: 12px;
-    }
+    list-style: none;  
   }
 `;
 
@@ -83,10 +62,7 @@ export const CopyrightArea = styled.div`
     margin: 0;
     font-size: 14px;
     color: #878787;
+    text-align: center;
 
-    a {
-      color: #245229;
-      text-decoration: none;
-    }
   }
 `;
