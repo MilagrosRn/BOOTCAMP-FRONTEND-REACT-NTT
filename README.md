@@ -1,54 +1,101 @@
+![Badges Placeholder](https://img.shields.io/badge/version-1.0.0-green) ![License Placeholder](https://img.shields.io/badge/license-MIT-blue)
 
 # 🌱 Market PLants - Web de productos
 
-¡Bienvenido/a a la Tienda en Línea! Este proyecto es una página web sencilla desarrollada con HTML y CSS que permite a los usuarios explorar y adquirir diferentes tipos de productos.
+![Alt text](image-3.png)
 
-## 📋 Descripción
+Market Plants es una aplicación web que permite a los usuarios explorar, buscar y comprar productos de plantas organizados por categorías, con opciones de búsqueda dinámica en tiempo real.
 
-La Tienda de Plantas es una web básica que presenta una interfaz amigable y fácil de navegar para los usuarios que desean comprar productos categorizados en belleza,fragancias,muebleria y abarrotes.
+## 📒 Index
 
-### Características
-
-- Página de inicio con una descripción general de la tienda.
-- Catálogo con imágenes y breves descripciones de cada tipo de producto.
-- Sección de categorías para facilitar la búsqueda
-- Barra de busqueda de productos reactiva
-- Diseño adaptable a dispositivos móviles para facilitar el acceso desde cualquier dispositivo.
-
-## 📂 Estructura del Proyecto
-
-La estructura de archivos de este proyecto es la siguiente:
-
-
-```
-market-proyect/
-├── index.html            # Página principal
-├── style.css         # Estilos de la web
-├── src/         # Logica centralizada en llamadas modularizadas entre archivos JS
-    └── scripts/          # Carpeta con archivos JS modularizando la logica del codigo
-    └── interfaces/          # Carpeta con interfaces
-└── assets/          # Carpeta con imágenes de las plantas e iconos
-
-```
-
-En el repositorio se encontraran otras carpetas desarrolladas en las sesiones teoricas en las que se baso el proyecto
-
-## 🚀 Tecnologías Utilizadas
-
-- **HTML5**: Para estructurar el contenido de la página.
-- **CSS3**: Para diseñar y estilizar la apariencia de la web.
-
-## 📸 Capturas de Pantalla
-### movil
-![Alt text](image-6.png)
-![Alt text](image-7.png)
-### web
-
-![Alt text](image-4.png)
-![Alt text](image-5.png)
-![Alt text](image-8.png)
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la Licencia MIT, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
+1. [About](#about)
+2. [Usage](#usage)
+3. [Installation](#installation)
+4. [Commands](#commands)
+5. [Development](#development)
+6. [Build](#build)
+7. [Gallery](#gallery)
 
 ---
+
+## About
+
+**Market Plants** es una aplicación basada en React con funciones dinámicas de filtrado, búsqueda y selección de categorías para una experiencia de usuario perfecta. Incluye:
+
+- Funcionalidad de barra de búsqueda en tiempo real.
+- Filtrado de productos por categoría.
+- Diseñado con Styled-Components para una apariencia moderna.
+- API de contexto para administrar el carrito de compras.
+
+---
+
+## Usage
+
+## Explora la lista de productos, busca productos de forma dinámica y fíltralos por categoría mediante el menú desplegable. Agrega productos a tu carrito y disfruta de una gestión de estado fluida en toda la aplicación.
+
+## Installation
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/MilagrosRn/BOOTCAMP-FRONTEND-REACT-NTT.git
+   ```
+2. Navegar al folder del proyecto
+   ```bash
+   cd market-plants
+   ```
+3. Instalar dependencias
+   ```bash
+   npm install
+   ```
+
+## Commands
+
+| Comando       | Descripcion                           |
+| ------------- | ------------------------------------- |
+| npm start     | Lanza el servidor de desarrollo       |
+| npm run build | Construye el proyecto para producción |
+
+## Development
+
+- Node.js (>= 16.x)
+- npm (>= 8.x)
+
+Estructura de archivos
+
+```
+   /src
+   /components
+       /Header
+       /Footer
+       /ProductList
+   /context
+       cartContext.tsx
+       useCart.ts
+   /domain
+       products.ts
+       categoryItem.ts
+   /shared
+       helpers/
+   App.tsx
+   index.tsx
+```
+
+## Build
+
+Generar una carpeta build donde estara la version de producción
+
+```
+   npm run build
+```
+
+## Gallery
+
+### movil
+
+![Alt text](image.png)
+![Alt text](image-1.png)
+
+### web
+
+![Alt text](image-2.png)
+![Alt text](image-9.png)
