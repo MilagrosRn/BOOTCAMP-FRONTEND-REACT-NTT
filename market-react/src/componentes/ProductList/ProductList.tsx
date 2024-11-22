@@ -8,6 +8,8 @@ import {
   ProductItem,
   ProductBody,
   ProductImage,
+  Price,
+  ContainerCategories,
 } from './ProductList.styled';
 import { useCartContext } from '../../context/cartContext';
 import { CategoryItem } from '../../domain/categoryItem';
@@ -31,7 +33,7 @@ interface ProductListProps {
   
   return (
     <MainContainer>
-      <div>
+      <ContainerCategories>
         <MainTitle>Nuestros productos de temporada</MainTitle>
         <CustomSelect>
           <h2>Categorías</h2>
@@ -43,14 +45,15 @@ interface ProductListProps {
             ))}
           </select>
         </CustomSelect>
-      </div>
+      </ContainerCategories>
 
       <ProductsList>
         {products.map((product) => (
           <ProductItem key={product.id}>
             <ProductBody>
-              <h2>{product.title}</h2>
-              <p>{product.price}</p>
+              <h2>{product.title}
+              <Price>{product.price}</Price>
+              </h2>
               <h3 className="badge">{product.category}</h3>
               <p>{product.description}</p>
               <button id="addBtnCounter" onClick={incrementCartCount}>Agregar al carrito</button>
