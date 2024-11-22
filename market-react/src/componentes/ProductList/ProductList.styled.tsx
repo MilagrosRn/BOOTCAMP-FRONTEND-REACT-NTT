@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MainContainer = styled.div`
   padding: 20px;
+  box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
 `;
 
 export const MainTitle = styled.h1`
@@ -33,16 +34,26 @@ export const ProductsList = styled.ul`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ProductItem = styled.li`
+  border-radius: 15px;
   display: flex;
   width: 49%;
   margin: 0 0 15px;
   font-size: 16px;
-  background: #a0a884;
+  background: #b5bd97;
   padding: 2%;
   overflow: hidden;
+  @media (max-width: 768px) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 export const Price = styled.span`
   color: white;

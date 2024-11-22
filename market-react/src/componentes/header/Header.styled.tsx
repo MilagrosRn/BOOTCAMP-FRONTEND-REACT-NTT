@@ -13,7 +13,7 @@ export const HeaderElement = styled.header`
 export const LeftContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
-  width: 60%;
+  width: 70%;
   `;
 
 export const Logo = styled.img`
@@ -22,6 +22,8 @@ export const Logo = styled.img`
 
 export const LogoText = styled.p`
   align-self: center;
+  font-size: 0.8rem;
+  margin-right: 8px;
 `;
 
 export const Search = styled.div`
