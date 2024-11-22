@@ -1,69 +1,43 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from "react";
+import { getAllProducts, searchProduct } from "./services/market.services";
+import { CartProvider } from "./context/cartContext";
+import Header from "./componentes/header/Header";
+import Footer from "./componentes/footer/Footer";
+import ProductList from "./componentes/ProductList/ProductList";
+import { Product } from "./domain/products";
 
 function App() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
-  // import { CategoryItem } from './interfaces/categoryItem';
-  // import {
-  //     renderProducts,
-  //     renderCategoriesSelectInput,
-  //   } from "./scripts/renderDOM.js";
-  //   import {
-  //     mapCategories,
-  //     filteredProductsByCategory,
-  //   } from "./scripts/pureFunctions.js";
-  //   import {Product} from "./interfaces/products.js"
-  //   import * as PromisesJS from "./scripts/promises.js";
-    
-  //   const searchInput:HTMLElement = document.querySelector('.searchTerm')!;
-  //   const categorySelect:HTMLElement = document.getElementById("categorySelect")!;
-    
-    
-  //   //  traer productos
-  //   PromisesJS.getAllProducts()
-  //     .then((products: Product[]) : Product[] => {
-  //       renderProducts(products);
-  //       renderCategoriesSelectInput(mapCategories(products));
-  //       return products
-    
-  //     })
-  //     .then((products:Product[]):void => {
-  //       categorySelect.addEventListener("change", (event:Event):void => {
-  //         const selectElement= event.target as HTMLSelectElement;
-  //         const selectedText = selectElement.options[selectElement.selectedIndex].text;
-            
-  //         // Renderizar los productos filtrados
-  //         renderProducts(filteredProductsByCategory(products, selectedText));
-  //       });
-    
-    
-  //       searchInput.addEventListener('input', (event:Event):void => {
-  //         // Convertir a minúsculas
-  //         const inputElement = event.target as HTMLInputElement;
-  //         const query = inputElement.value.toLowerCase();
-  //         const filteredProducts = products.filter(product => 
-  //           product.title.toLowerCase().includes(query) || 
-  //           product.description.toLowerCase().includes(query) ||
-  //           product.category.toLowerCase().includes(query)
-  //         );
-  //         renderProducts(filteredProducts); 
-  //       });
-    
-    
-  //     })
-  //     .catch((error:Error) => {
-  //       console.error(error);
-  //     });
-    
+  // Cargar productos iniciales
+  useEffect(() => {
+    const loadProducts = async () => {
+      const fetchedProducts = await getAllProducts();
+      setProducts(fetchedProducts); // Estado original de todos los productos
+      setFilteredProducts(fetchedProducts); // Estado para productos filtrados
+    };
 
+    loadProducts();
+  }, []);
 
+  // Manejar búsqueda dinámica
+  const handleSearch = async (query: string) => {
+    if (query.trim() === "") {
+      setFilteredProducts(products); 
+    } else {
+      const results = await searchProduct(query);
+      setFilteredProducts(results); 
+    }
+  };
 
   return (
-    <>
-      
-    </>
-  )
+    <CartProvider>
+      <Header onSearch={handleSearch} />
+      <ProductList products={filteredProducts} />
+      <Footer />
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;

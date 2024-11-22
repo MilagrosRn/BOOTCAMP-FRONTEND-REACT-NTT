@@ -265,54 +265,7 @@ margin-bottom: 30px;
 .footer-logo img {
   max-width: 200px;
 }
-.footer-text p {
-margin-bottom: 14px;
-font-size: 14px;
-    color: #7e7e7e;
-line-height: 28px;
-}
-.footer-social-icon span {
-color: #fff;
-display: block;
-font-size: 20px;
-font-weight: 700;
-font-family: 'Poppins', sans-serif;
-margin-bottom: 20px;
-}
-.footer-widget{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.footer-widget-heading h3 {
-color: #fff;
-font-size: 20px;
-font-weight: 600;
-margin-bottom: 40px;
-position: relative;
-}
-.footer-widget-heading h3::before {
-content: "";
-position: absolute;
-left: 0;
-bottom: -15px;
-height: 2px;
-width: 50px;
-background: #245229;
-}
-.footer-widget ul li {
-display: inline-block;
-float: left;
-width: 50%;
-margin-bottom: 12px;
-}
-.footer-widget ul li a:hover{
-color: #245229;
-}
-.footer-widget ul li a {
-color: #878787;
-text-transform: capitalize;
-}
+
 
 .copyright-area{
 background:#f4fae0;
@@ -326,17 +279,7 @@ color: #878787;
 .copyright-text p a{
 color: #245229;
 }
-.footer-menu li {
-display: inline-block;
-margin-left: 20px;
-}
-.footer-menu li:hover a{
-color: #245229;
-}
-.footer-menu li a {
-font-size: 14px;
-color: #878787;
-}
+
 
 /* boton */
 body {

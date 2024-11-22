@@ -1,5 +1,5 @@
-import { CategoryItem } from "@/interfaces/categoryItem";
-import { Product } from "@/interfaces/products";
+import { CategoryItem } from "../../domain/categoryItem";
+import { Product } from "../../domain/products";
 
 export const mapCategories = (products:Product[]):CategoryItem[] => {
   
