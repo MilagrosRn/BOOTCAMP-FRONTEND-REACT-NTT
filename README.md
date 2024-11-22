@@ -31,7 +31,7 @@ Market Plants es una aplicación web que permite a los usuarios explorar, buscar
 
 ## Usage
 
-## Explora la lista de productos, busca productos de forma dinámica y fíltralos por categoría mediante el menú desplegable. Agrega productos a tu carrito y disfruta de una gestión de estado fluida en toda la aplicación.
+Explora la lista de productos, busca productos de forma dinámica y fíltralos por categoría mediante el menú desplegable. Agrega productos a tu carrito y disfruta de una gestión de estado fluida en toda la aplicación.
 
 ## Installation
 
@@ -83,7 +83,6 @@ Estructura de archivos
 ## Build
 
 Generar una carpeta build donde estara la version de producción
-
 ```
    npm run build
 ```
@@ -97,5 +96,6 @@ Generar una carpeta build donde estara la version de producción
 
 ### web
 
-![Alt text](image-2.png)
 ![Alt text](image-9.png)
+![Alt text](image-2.png)
+
