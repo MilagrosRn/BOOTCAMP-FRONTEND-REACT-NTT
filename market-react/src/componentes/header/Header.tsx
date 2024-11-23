@@ -1,4 +1,5 @@
 import React, { useRef} from 'react';
+import { Link } from "react-router-dom";
 import { useCartContext } from '../../context/cartContext';
 import {
   HeaderElement,
@@ -43,12 +44,14 @@ interface HeaderProps {
         </SearchButton>
       </Search>
     </LeftContainer>
-
-    <RightContainer>
-      <BadgeCounter ref={badgeCounterRef}>{cartCount}</BadgeCounter>
-      <Logo alt="Icono Tienda" src="../assets/tienda-de-comestibles.png" />
-    </RightContainer>
+    <Link to="/resumen">
+      <RightContainer>
+        <BadgeCounter ref={badgeCounterRef}>{cartCount}</BadgeCounter>
+        <Logo alt="Icono Tienda" src="../assets/tienda-de-comestibles.png" />
+      </RightContainer>
+    </Link>
   </HeaderElement>
+  
   );
 };
 
