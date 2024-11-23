@@ -5,7 +5,8 @@ import { CartState } from "../domain/carState";
 type CartAction =
   | { type: "ADD_TO_CART"; payload: Product }
   | { type: "REMOVE_FROM_CART"; payload: number }
-  | { type: "DECREMENT_FROM_CART"; payload: number };
+  | { type: "DECREMENT_FROM_CART"; payload: number }
+  | { type: "CLEAR_CART" };
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -61,7 +62,9 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
           (item) => item.product.id !== action.payload
         ),
       };
-
+      case "CLEAR_CART": {
+        return { ...state, cartItems: [] };
+      }
     default:
       return state;
   }

@@ -6,9 +6,12 @@ import FormField from '../formField/FormField';
 import { Container, FormContainer } from './Form.styled';
 import { BtnComprar, FormTitle } from '../formField/FormField.styled';
 
+import { useCartContext } from '../../context/cartContext';
+
 const FormComponent: React.FC = () => {
   const navigate = useNavigate();
   const distritos = useDistricts();
+  const { dispatch } = useCartContext();
 
   const [formData, setFormData] = useState({
     nombre: '',
@@ -85,6 +88,7 @@ const FormComponent: React.FC = () => {
       referencia: '',
       celular: '',
     });
+    dispatch({ type: "CLEAR_CART" });
     navigate('/');
   };
 
