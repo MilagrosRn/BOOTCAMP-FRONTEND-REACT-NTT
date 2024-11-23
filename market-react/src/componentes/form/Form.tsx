@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import useDistricts from '../../hooks/useDistricts';
 import Modal from '../modal/Modal';
 import FormField from '../formField/FormField';
+import { Container, FormContainer } from './Form.styled';
+import { BtnComprar, FormTitle } from '../formField/FormField.styled';
 
 const FormComponent: React.FC = () => {
   const navigate = useNavigate();
@@ -87,9 +89,11 @@ const FormComponent: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Resumen de Carrito</h1>
-      <form onSubmit={handleSubmit}>
+    <Container>
+      <FormTitle>Formulario de Envio</FormTitle>
+      {showSuccess && <Modal onAccept={handleAccept} />}
+
+      <FormContainer onSubmit={handleSubmit}>
         <FormField
           label="Nombre"
           name="nombre"
@@ -139,11 +143,10 @@ const FormComponent: React.FC = () => {
           error={errors.celular}
           onChange={handleChange}
         />
-        <button type="submit">Comprar</button>
-      </form>
+        <BtnComprar type="submit">Comprar</BtnComprar>
+      </FormContainer>
 
-      {showSuccess && <Modal onAccept={handleAccept} />}
-    </div>
+    </Container>
   );
 };
 

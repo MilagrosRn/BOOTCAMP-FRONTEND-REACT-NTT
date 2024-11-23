@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormContainer, FormInput, FormSelect } from './FormField.styled';
 
 interface FormFieldProps {
   label: string;
@@ -20,21 +21,21 @@ const FormField: React.FC<FormFieldProps> = ({
   options,
 }) => {
   return (
-    <div>
+    <FormContainer>
       <label>{label}:</label>
       {type === 'select' ? (
-        <select name={name} value={value} onChange={onChange}>
+        <FormSelect name={name} value={value} onChange={onChange}>
           {options?.map((option, index) => (
             <option key={index} value={option}>
               {option}
             </option>
           ))}
-        </select>
+        </FormSelect>
       ) : (
-        <input type={type} name={name} value={value} onChange={onChange} />
+        <FormInput type={type} name={name} value={value} onChange={onChange} />
       )}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
+    </FormContainer>
   );
 };
 
