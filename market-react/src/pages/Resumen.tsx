@@ -1,8 +1,13 @@
+import React from "react";
+import ShoppingCar from "../componentes/shoppingCar/shoppingCar";
+import FormComponent from "../componentes/form/Form";
+
 const Resumen = () => {
   return (
-    <div>
-      <h1>Resumen de Carrito</h1>
-    </div>
+    <>
+      <ShoppingCar></ShoppingCar>
+      <FormComponent></FormComponent>
+    </>
   );
 };
 
