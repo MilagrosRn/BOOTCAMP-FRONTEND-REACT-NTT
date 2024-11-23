@@ -68,14 +68,27 @@ Estructura de archivos
        /Header
        /Footer
        /ProductList
+       /Form
+       /FormField
+       /Modal
+       /ShoppingCar
    /context
        cartContext.tsx
        useCart.ts
+   /routes
+   /services
+   /data
+      districts.json
+   /hooks
+   /pages
+      /home
+      /resume
    /domain
        products.ts
        categoryItem.ts
    /shared
        helpers/
+       util/
    App.tsx
    index.tsx
 ```
@@ -93,9 +106,12 @@ Generar una carpeta build donde estara la version de producción
 
 ![Alt text](image.png)
 ![Alt text](image-1.png)
-
+![Alt text](image-5.png)
+![Alt text](image-4.png)
 ### web
 
 ![Alt text](image-9.png)
 ![Alt text](image-2.png)
+![Alt text](image-4.png)
+
 
