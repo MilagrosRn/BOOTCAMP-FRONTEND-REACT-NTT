@@ -10,19 +10,23 @@ import {
   SearchButton,
   RightContainer,
   BadgeCounter,
-} from "./Header.styled";
+} from "./Header.styled"; 
 interface HeaderProps {
     onSearch: (query: string) => void;
   }
   
   const Header: React.FC<HeaderProps> = ({ onSearch }) => {
-    const { cartCount } = useCartContext();
     const badgeCounterRef = useRef<HTMLSpanElement>(null);
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const query = event.target.value;
       onSearch(query); 
     };
-  
+    const { state } = useCartContext();
+
+    const cartCount = state.cartItems.reduce(
+      (total, item) => total + item.quantity,
+      0
+    );
   return (
     <HeaderElement>
     <LeftContainer>

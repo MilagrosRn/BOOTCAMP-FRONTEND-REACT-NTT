@@ -1,51 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { getAllProducts, searchProduct } from "./services/market.services";
-import { CartProvider } from "./context/cartContext";
-import Header from "./componentes/header/Header";
-import Footer from "./componentes/footer/Footer";
-import ProductList from "./componentes/ProductList/ProductList";
-import { Product } from "./domain/products";
-import { filterProducts } from "./shared/helpers/filterByProducts";
+import RoutesComponent from "./routes";
 
-function App() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+const App = () => {
+  return <RoutesComponent />;
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      const fetchedProducts = await getAllProducts();
-      setProducts(fetchedProducts);
-      setFilteredProducts(fetchedProducts); // Estado para productos filtrados
-    };
-
-    loadProducts();
-  }, []);
-
-  const handleSearch = async (query: string) => {
-    if (query.trim() === "") {
-      setFilteredProducts(products);
-    } else {
-      const results = await searchProduct(query);
-      setFilteredProducts(results);
-    }
-  };
-
-  // Manejar filtrado por categoría
-  const handleCategoryChange = (selectedText: string) => {
-    const filtered = filterProducts(products, selectedText);
-    setFilteredProducts(filtered);
-  };
-  return (
-    <CartProvider>
-      <Header onSearch={handleSearch} />
-      <ProductList
-        products={filteredProducts} 
-        allProducts={products} 
-        onCategoryChange={handleCategoryChange}
-      />{" "}
-      <Footer />
-    </CartProvider>
-  );
 }
 
 export default App;
