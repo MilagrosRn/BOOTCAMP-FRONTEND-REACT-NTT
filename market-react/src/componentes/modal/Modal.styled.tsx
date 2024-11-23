@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// Contenedor principal del modal
 export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,7 +18,6 @@ export const ModalContainer = styled.div`
   z-index: 1000;
 `;
 
-// Texto del modal
 export const ModalText = styled.p`
   font-size: 1rem;
   margin: 10px 0;
@@ -27,7 +25,6 @@ export const ModalText = styled.p`
   text-align: center;
 `;
 
-// Botón de aceptar en el modal
 export const ModalButton = styled.button`
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
@@ -53,7 +50,6 @@ export const ModalButton = styled.button`
   }
 `;
 
-// Fondo oscuro detrás del modal
 export const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;

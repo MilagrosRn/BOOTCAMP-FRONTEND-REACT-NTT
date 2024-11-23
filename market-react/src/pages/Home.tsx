@@ -29,7 +29,6 @@ const Home = () => {
     }
   };
 
-  // Manejar filtrado por categoría
   const handleCategoryChange = (selectedText: string) => {
     const filtered = filterProducts(products, selectedText);
     setFilteredProducts(filtered);
