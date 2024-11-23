@@ -10,8 +10,7 @@ import {
   SearchButton,
   RightContainer,
   BadgeCounter,
-} from "./Header.styled"; // Cambia la ruta según sea necesario
-
+} from "./Header.styled";
 interface HeaderProps {
     onSearch: (query: string) => void;
   }

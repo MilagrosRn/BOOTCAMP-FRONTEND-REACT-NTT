@@ -1,5 +1,5 @@
-import React, { createContext, useContext } from "react";
 import useCart from "./useCart";
+import React, { createContext, useContext } from "react";
 
 interface CartContextProps {
   cartCount: number;
