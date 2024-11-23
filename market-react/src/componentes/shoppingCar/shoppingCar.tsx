@@ -14,8 +14,8 @@ const ShoppingCar: React.FC = () => {
   
 
   const handleDecrement = (id: number) => {
-    dispatch({ type: "REMOVE_FROM_CART", payload: id });
-  };
+    dispatch({ type: "DECREMENT_FROM_CART", payload: id });
+  };  
 
   const handleRemove = (id: number) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: id });

@@ -4,7 +4,8 @@ import { CartState } from "../domain/carState";
 
 type CartAction =
   | { type: "ADD_TO_CART"; payload: Product }
-  | { type: "REMOVE_FROM_CART"; payload: number };
+  | { type: "REMOVE_FROM_CART"; payload: number }
+  | { type: "DECREMENT_FROM_CART"; payload: number };
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -27,6 +28,29 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       return {
         ...state,
         cartItems: [...state.cartItems, { product: action.payload, quantity: 1 }],
+      };
+    }
+    case "DECREMENT_FROM_CART": {
+      const existingItem = state.cartItems.find(
+        (item) => item.product.id === action.payload
+      );
+
+      if (existingItem && existingItem.quantity > 1) {
+        return {
+          ...state,
+          cartItems: state.cartItems.map((item) =>
+            item.product.id === action.payload
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
+          ),
+        };
+      }
+
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          (item) => item.product.id !== action.payload
+        ),
       };
     }
 
