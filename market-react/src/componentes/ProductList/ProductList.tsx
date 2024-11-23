@@ -60,10 +60,7 @@ interface ProductListProps {
         <p>{product.description}</p>
         <button
           id="addBtnCounter"
-          onClick={() =>
-          {  dispatch({ type: "ADD_TO_CART", payload: product }) ;
-        console.log(product)}
-          }
+          onClick={() => dispatch({ type: "ADD_TO_CART", payload: product })}
         >
           Agregar al carrito
         </button>

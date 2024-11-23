@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getAllProducts, searchProduct } from "../services/market.services";
-import { CartProvider } from "../context/cartContext";
 import Header from "../componentes/header/Header";
 import Footer from "../componentes/footer/Footer";
 import ProductList from "../componentes/ProductList/ProductList";
@@ -36,15 +35,11 @@ const Home = () => {
     setFilteredProducts(filtered);
   };
   return (
-    <CartProvider>
-      <Header onSearch={handleSearch} />
-      <ProductList
-        products={filteredProducts} 
-        allProducts={products} 
-        onCategoryChange={handleCategoryChange}
-      />{" "}
-      <Footer />
-    </CartProvider>
+      <><Header onSearch={handleSearch} /><ProductList
+      products={filteredProducts}
+      allProducts={products}
+      onCategoryChange={handleCategoryChange} />{" "}
+      <Footer /></>
   );
 }
 export default Home;

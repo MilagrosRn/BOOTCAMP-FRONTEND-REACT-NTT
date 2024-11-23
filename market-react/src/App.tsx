@@ -1,7 +1,12 @@
+import { CartProvider } from "./context/cartContext";
 import RoutesComponent from "./routes";
 
 const App = () => {
-  return <RoutesComponent />;
+  return (
+    <CartProvider>      
+      <RoutesComponent />;
+          </CartProvider>
+      );
 
 }
 
