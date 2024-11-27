@@ -18,6 +18,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       if (existingItem) {
         return {
           ...state,
+          // usemos llaves es m'as f'acil de leer
           cartItems: state.cartItems.map((item) =>
             item.product.id === action.payload.id
               ? { ...item, quantity: item.quantity + 1 }
@@ -39,6 +40,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       if (existingItem && existingItem.quantity > 1) {
         return {
           ...state,
+          // igual aqu'i
           cartItems: state.cartItems.map((item) =>
             item.product.id === action.payload
               ? { ...item, quantity: item.quantity - 1 }

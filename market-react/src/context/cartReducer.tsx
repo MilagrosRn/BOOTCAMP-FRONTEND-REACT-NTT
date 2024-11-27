@@ -1,3 +1,4 @@
+// no dejar c'odigo que no se usa
 // import { Product } from "../domain/products";
 
 // type CartAction =

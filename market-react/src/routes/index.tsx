@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import Resumen from "../pages/Resumen";
 
 const RoutesComponent = () => {
+  // usemos enum para los paths
   return (
     <Router>
       <Routes>

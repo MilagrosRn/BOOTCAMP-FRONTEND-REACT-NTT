@@ -54,11 +54,13 @@ const ShoppingCar: React.FC = () => {
                   <QuantityControls>
                     <button
                       onClick={() => handleIncrement(item.product)}
+                      // por que >=10 tal vez usar una funci'on para encapsularlo
                       disabled={item.quantity >= 10}
                     >
                       +
                     </button>
                     <span>{item.quantity}</span>
+                    {/* // por qu'e' > 1? */}
                     <button
                       onClick={() => item.quantity > 1
                         ? handleDecrement(item.product.id)

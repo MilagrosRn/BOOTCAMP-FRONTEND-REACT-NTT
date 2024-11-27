@@ -13,6 +13,7 @@ export const mapCategories = (products:Product[]):CategoryItem[] => {
 };
 
 export const filteredProductsByCategory = (products:Product[], selectedText:string):Product[] => {
+  // no usar palabras m'agicas usemos enums
   if (selectedText === "Todas las categorías") {
     return products;
   }

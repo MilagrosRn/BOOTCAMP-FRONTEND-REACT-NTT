@@ -24,6 +24,7 @@ interface ProductListProps {
     
     const { dispatch } = useCartContext(); 
     const categories: CategoryItem[] = mapCategories(allProducts);
+    // usemos constantes para definir valores fijos
     const [selectedCategory, setSelectedCategory] = useState<string>("Todas las categorías");
   
     const handleCategorySelect = (e: React.ChangeEvent<HTMLSelectElement>) => {

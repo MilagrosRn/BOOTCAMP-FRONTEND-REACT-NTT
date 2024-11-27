@@ -3,11 +3,11 @@ import RoutesComponent from "./routes";
 
 const App = () => {
   return (
-    <CartProvider>      
+    <CartProvider>
+      {/* por qu'e el ; ? */}
       <RoutesComponent />;
-          </CartProvider>
-      );
-
-}
+    </CartProvider>
+  );
+};
 
 export default App;

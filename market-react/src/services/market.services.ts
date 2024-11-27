@@ -9,6 +9,7 @@ import { Product } from "../domain/products";
       }
   
       const res = await response.json();
+      // llevarlo a un mapper
       return res.products.map((product: any) => ({
         id: product.id,
         title: product.title,
