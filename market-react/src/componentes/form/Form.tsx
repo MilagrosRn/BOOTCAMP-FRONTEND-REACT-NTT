@@ -1,3 +1,5 @@
+
+// el formulario acepta registrar si ponemos espacios en blanco
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useDistricts from '../../hooks/useDistricts';
@@ -13,6 +15,7 @@ const FormComponent: React.FC = () => {
   const distritos = useDistricts();
   const { dispatch } = useCartContext();
 
+  // falta tipar para especificar solo las keys necesarias
   const [formData, setFormData] = useState({
     nombre: '',
     apellido: '',
@@ -22,6 +25,7 @@ const FormComponent: React.FC = () => {
     celular: '',
   });
 
+  // falta tipar para especificar solo las keys necesarias
   const [errors, setErrors] = useState({
     nombre: '',
     apellido: '',
@@ -45,6 +49,7 @@ const FormComponent: React.FC = () => {
     let formIsValid = true;
     let newErrors = { ...errors };
 
+    // el regex deber'ia estar en otro archivo para reutilizarlo
     if (!formData.nombre || /\d/.test(formData.nombre)) {
       newErrors.nombre = 'Debe ingresar un valor válido';
       formIsValid = false;
@@ -65,6 +70,7 @@ const FormComponent: React.FC = () => {
       newErrors.referencia = 'Campo obligatorio';
       formIsValid = false;
     }
+    // igual aqu'i
     if (!formData.celular || !/^\d{9}$/.test(formData.celular)) {
       newErrors.celular = 'Debe ingresar un número de celular válido';
       formIsValid = false;
@@ -89,6 +95,8 @@ const FormComponent: React.FC = () => {
       celular: '',
     });
     dispatch({ type: "CLEAR_CART" });
+
+    // usar enum
     navigate('/');
   };
 

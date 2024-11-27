@@ -34,11 +34,15 @@ const Home = () => {
     setFilteredProducts(filtered);
   };
   return (
-      <><Header onSearch={handleSearch} /><ProductList
-      products={filteredProducts}
-      allProducts={products}
-      onCategoryChange={handleCategoryChange} />{" "}
-      <Footer /></>
+    <>
+      <Header onSearch={handleSearch} />
+      <ProductList
+        products={filteredProducts}
+        allProducts={products}
+        onCategoryChange={handleCategoryChange}
+      />
+      <Footer />
+    </>
   );
-}
+};
 export default Home;
