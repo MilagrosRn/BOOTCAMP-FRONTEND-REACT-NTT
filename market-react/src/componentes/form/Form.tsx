@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useDistricts from '../../hooks/useDistricts';
+import {useDistricts} from '../../hooks/useDistricts';
 import Modal from '../modal/Modal';
 import FormField from '../formField/FormField';
 import { Container, FormContainer } from './Form.styled';
@@ -147,7 +147,7 @@ const FormComponent: React.FC = () => {
           error={errors.celular}
           onChange={handleChange}
         />
-        <BtnComprar type="submit">Comprar</BtnComprar>
+        <BtnComprar title='comprar'  type="submit">Comprar</BtnComprar>
       </FormContainer>
 
     </Container>

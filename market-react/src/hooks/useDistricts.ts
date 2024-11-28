@@ -12,4 +12,4 @@ const useDistricts = () => {
   return distritos;
 };
 
-export default useDistricts;
+export {useDistricts};

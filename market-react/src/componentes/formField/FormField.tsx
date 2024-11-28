@@ -22,9 +22,9 @@ const FormField: React.FC<FormFieldProps> = ({
 }) => {
   return (
     <FormContainer>
-      <label>{label}:</label>
+      <label  htmlFor={name}>{label}:</label>
       {type === 'select' ? (
-        <FormSelect name={name} value={value} onChange={onChange}>
+        <FormSelect id={name} name={name} value={value} onChange={onChange}>
           {options?.map((option, index) => (
             <option key={index} value={option}>
               {option}
@@ -32,7 +32,7 @@ const FormField: React.FC<FormFieldProps> = ({
           ))}
         </FormSelect>
       ) : (
-        <FormInput type={type} name={name} value={value} onChange={onChange} />
+        <FormInput id={name} type={type} name={name} value={value} onChange={onChange} />
       )}
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </FormContainer>

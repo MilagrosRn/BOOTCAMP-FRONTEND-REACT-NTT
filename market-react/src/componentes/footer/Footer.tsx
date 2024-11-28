@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
       <FooterSection>
         <FooterContent>
         <FooterWidget>
-                  <img src="assets/facebook.png" height="32px" />
-                  <img src="assets/instagram.png" height="32px" />
-                  <img src="assets/youtube.png" height="32px" />
+                  <img src="assets/facebook.png" alt="Facebook Icon" height="32px" />
+                  <img src="assets/instagram.png" alt="Instagram Icon" height="32px" />
+                  <img src="assets/youtube.png" alt="YouTube Icon" height="32px" />
             
           </FooterWidget>
           <FooterText>
