@@ -5,7 +5,7 @@ export const productMock: Product = {
     title: "productMock",
     description:  "productMock",
     category:  "productMock",
-    price:2 ,
+    price:2,
     discountPercentage:  2,
     rating:  2,
     stock:  2,
