@@ -7,7 +7,7 @@ const initialState: CartState = {
   cartItems: [],
 };
 
-const CartContext = createContext<{
+export const CartContext = createContext<{
   state: CartState;
   dispatch: React.Dispatch<CartAction>;
 } | null>(null);

@@ -11,10 +11,3 @@ export const mapCategories = (products:Product[]):CategoryItem[] => {
   formattedItems.unshift({ value: "0", text: "Todas las categorías" });
   return formattedItems;
 };
-
-export const filteredProductsByCategory = (products:Product[], selectedText:string):Product[] => {
-  if (selectedText === "Todas las categorías") {
-    return products;
-  }
-  return products.filter((product:Product) => product.category === selectedText);
-};

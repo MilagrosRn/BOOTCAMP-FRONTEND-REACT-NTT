@@ -46,7 +46,7 @@ interface HeaderProps {
     </LeftContainer>
     <Link to="/resumen">
       <RightContainer>
-        <BadgeCounter ref={badgeCounterRef}>{cartCount}</BadgeCounter>
+        <BadgeCounter  ref={badgeCounterRef}>{cartCount}</BadgeCounter>
         <Logo alt="Icono Tienda" src="../assets/tienda-de-comestibles.png" />
       </RightContainer>
     </Link>

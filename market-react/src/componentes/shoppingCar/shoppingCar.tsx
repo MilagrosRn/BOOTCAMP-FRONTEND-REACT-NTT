@@ -3,7 +3,7 @@ import { Product } from "../../domain/products";
 import { formatPrice } from "../../shared/utils/formatNumberRegex";
 import { Logo, LogoText } from "../header/Header.styled";
 import { CartContainer, HeaderElement, QuantityControls, RemoveButton, Table, TittleCointainer, TotalContainer, } from "./shoppingCar.styled";
-
+import React from "react";
 
 const ShoppingCar: React.FC = () => {
 

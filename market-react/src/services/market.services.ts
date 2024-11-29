@@ -31,6 +31,7 @@ import { Product } from "../domain/products";
       const data = await resp.json();
       return data.products;
     } catch (error) {
+      
       console.error("Hubo un error al buscar el producto:", error);
       return [];
     }

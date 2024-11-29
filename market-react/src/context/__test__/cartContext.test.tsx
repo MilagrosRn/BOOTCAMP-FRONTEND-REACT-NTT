@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { CartState } from "../../domain/carState";
 import { CartAction } from "../carActions";
 import { cartReducer } from "../carReducer";
