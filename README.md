@@ -33,6 +33,10 @@ Market Plants es una aplicación web que permite a los usuarios explorar, buscar
 
 Explora la lista de productos, busca productos de forma dinámica y fíltralos por categoría mediante el menú desplegable. Agrega productos a tu carrito y disfruta de una gestión de estado fluida en toda la aplicación.
 
+Para ingreso al resumen de pago las credenciales en prueba local son:
+usuario: emilys
+contraseña: emilyspass
+
 ## Installation
 
 1. Clonar el repositorio:
@@ -102,16 +106,17 @@ Generar una carpeta build donde estara la version de producción
 
 ## Gallery
 
+### web
+
+![Alt text](image-6.png)
+![Alt text](image-7.png)
+![Alt text](image-8.png)
+![Alt text](image-11.png)
+
 ### movil
 
 ![Alt text](image.png)
 ![Alt text](image-1.png)
 ![Alt text](image-5.png)
 ![Alt text](image-4.png)
-### web
-
-![Alt text](image-9.png)
-![Alt text](image-2.png)
-![Alt text](image-4.png)
-
-
+![Alt text](image-10.png)
