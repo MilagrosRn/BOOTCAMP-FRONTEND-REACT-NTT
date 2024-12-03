@@ -1,13 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/authContext.tsx/authContext";
 import { useCartContext } from "../../context/cartContext";
 import { Product } from "../../domain/products";
 import { formatPrice } from "../../shared/utils/formatNumberRegex";
+import { BtnComprar } from "../formField/FormField.styled";
 import { Logo, LogoText } from "../header/Header.styled";
-import { CartContainer, HeaderElement, QuantityControls, RemoveButton, Table, TittleCointainer, TotalContainer, } from "./shoppingCar.styled";
+import { CartContainer, HeaderElement, LogoContainer, QuantityControls, RemoveButton, RightContainer, Table, TittleCointainer, TotalContainer, } from "./shoppingCar.styled";
 import React from "react";
 
 const ShoppingCar: React.FC = () => {
-
+  const { user } = useAuth(); 
   const { state, dispatch } = useCartContext();
+  const navigate = useNavigate();
+  
   const handleIncrement = (product:Product) => {
       dispatch({ type: "ADD_TO_CART", payload: product });
   };
@@ -20,6 +25,9 @@ const ShoppingCar: React.FC = () => {
   const handleRemove = (id: number) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: id });
   };
+  const handleNavigate = () => {
+    navigate("/"); 
+  }
 
   const totalPrice = state.cartItems.reduce((total, item) => {
     return total + parseFloat(formatPrice(item.product.price)) * item.quantity;
@@ -27,12 +35,18 @@ const ShoppingCar: React.FC = () => {
   
   return (
     <><HeaderElement>
-
+  <LogoContainer>
       <Logo alt="Logo Plantas" src="../assets/plantas.png" />
-      <LogoText>Market Plants</LogoText>
+      <LogoText>{user ? `Bienvenido: ${user.username}` : "Market Plants"}</LogoText>
+    </LogoContainer>
       <TittleCointainer>
-        <h1>Resumen de Carrito</h1></TittleCointainer>
-    </HeaderElement><CartContainer>
+        <h1>Resumen de Carrito</h1>
+        </TittleCointainer>
+        <RightContainer>
+        <BtnComprar onClick={handleNavigate}>Regresar</BtnComprar>
+        </RightContainer>
+    </HeaderElement>
+    <CartContainer>
         <Table>
           <thead>
             <tr>

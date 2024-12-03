@@ -18,6 +18,9 @@ export const LeftContainer = styled.div`
 
 export const Logo = styled.img`
   height: 50px;
+  @media (max-width: 768px) {
+      height:30px
+    }
 `;
 
 export const LogoText = styled.p`
@@ -79,4 +82,13 @@ export const BadgeCounter = styled.span`
   padding: 4px 8px;
   text-align: center;
   border-radius: 9px;
+`;
+export const LogoutButton = styled.button`
+  background-color: transparent;
+  color: #ff0081;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-left: 20px;
 `;

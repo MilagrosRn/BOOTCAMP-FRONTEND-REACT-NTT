@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderElement = styled.header`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   box-shadow: 10px 6px 37px -13px rgba(51, 51, 51, 0.74);
   border-radius: 2px;
   padding: 10px;
@@ -10,6 +10,12 @@ export const HeaderElement = styled.header`
   background-color: #f4fae0;
   h1{
     font-size: 1.5rem }
+
+    @media (max-width: 768px) {
+      flex-direction:column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 `;
 export const TittleCointainer=styled.div`
 display: flex;
@@ -148,3 +154,14 @@ export const RemoveButton = styled.button`
     font-size: 0.8rem;
   }
 `;
+export const RightContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+`;
+
+export const LogoContainer = styled.div`
+display: flex
+`;
+
+
