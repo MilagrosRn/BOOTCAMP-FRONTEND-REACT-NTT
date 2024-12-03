@@ -1,8 +1,10 @@
+import React from "react";
+
 import { useState } from "react";
 import { FormInput, BtnComprar, StyledCancelButton, StyledLink, AlertMessage, Container, Logo, ErrorMessage } from "./FormLogin.styles";
 import ModalOverlay from "../modalOverlay/ModalOverlay";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/authContext.tsx/authContext";
+import { useAuth } from "../../context/authContext/authContext";
 import { loginService } from "../../services/auth.service";
 
 
@@ -104,10 +106,10 @@ const FormLogin: React.FC  = () => {
          <BtnComprar type="submit" disabled={loading}>
           {loading ? "Cargando..." : "Iniciar Sesión"}
         </BtnComprar>
-        <StyledLink  href="/" onClick={handleRedirect}>Seguir compando</StyledLink>
+        <StyledLink  href="/" onClick={handleRedirect}>Seguir comprando</StyledLink>
       </form>
       
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <StyledLink
         href="#"
         onClick={(e) => {

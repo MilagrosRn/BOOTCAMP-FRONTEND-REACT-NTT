@@ -4,7 +4,7 @@ import Resumen from "../pages/Resumen";
 import React from 'react';
 import withAuth from "../HOC/withAuth";
 import Login from "../pages/Login";
-import { useAuth } from "../context/authContext.tsx/authContext";
+import { useAuth } from "../context/authContext/authContext";
 
 export const RoutesComponent = () => {
   const { isAuthenticated } = useAuth();

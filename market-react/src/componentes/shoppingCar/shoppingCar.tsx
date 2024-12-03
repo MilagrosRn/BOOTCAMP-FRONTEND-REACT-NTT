@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/authContext.tsx/authContext";
+import { useAuth } from "../../context/authContext/authContext";
 import { useCartContext } from "../../context/cartContext";
 import { Product } from "../../domain/products";
 import { formatPrice } from "../../shared/utils/formatNumberRegex";

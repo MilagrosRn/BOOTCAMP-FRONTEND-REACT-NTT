@@ -13,7 +13,7 @@ import {
   BadgeCounter,
   LogoutButton,
 } from "./Header.styled"; 
-import { useAuth } from '../../context/authContext.tsx/authContext';
+import { useAuth } from '../../context/authContext/authContext';
 interface HeaderProps {
     onSearch: (query: string) => void;
   }

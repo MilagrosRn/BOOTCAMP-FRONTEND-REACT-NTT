@@ -1,4 +1,6 @@
 import { Overlay, Content } from "./Modal.Overlay.styled";
+import React from "react";
+
 
 interface ModalOverlayProps {
     children: React.ReactNode;
@@ -7,7 +9,7 @@ interface ModalOverlayProps {
   
   const ModalOverlay: React.FC<ModalOverlayProps> = ({ children, onClose }) => {
     return (
-      <Overlay onClick={onClose}>
+      <Overlay  role="dialog" onClick={onClose}>
         <Content onClick={(e) => e.stopPropagation()}>{children}</Content>
       </Overlay>
     );

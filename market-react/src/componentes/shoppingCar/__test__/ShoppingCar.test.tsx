@@ -2,11 +2,11 @@ import React from "react";
 import "@testing-library/jest-dom"
 import { MemoryRouter } from 'react-router-dom';
 import { render, screen, fireEvent } from "@testing-library/react";
-import { productMock, productMock2 } from "../../../__mocks__/datamock";
+import { productMock} from "../../../__mocks__/datamock";
 import { CartContext } from "../../../context/cartContext";
 import ShoppingCar from "../shoppingCar";
 import { Product } from "../../../domain/products";
-import { AuthContext, AuthContextType } from "../../../context/authContext.tsx/authContext";
+import { AuthContext, AuthContextType } from "../../../context/authContext/authContext";
 import { User } from "../../../domain/user";
 
 export const MockAuthProvider = ({
