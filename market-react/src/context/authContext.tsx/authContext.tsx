@@ -1,14 +1,14 @@
 import React, { createContext, useContext, useState } from "react";
 import { User } from "../../domain/user";
 
-interface AuthContextType {
+export interface AuthContextType {
   isAuthenticated: boolean;
   user: User | null;
   login: (userData: User) => void;
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
