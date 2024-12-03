@@ -81,6 +81,7 @@ export const Table = styled.table`
       border: 1px solid #ddd;
       border-radius: 5px;
       overflow: hidden;
+      align-items: center;
     }
 
     img {

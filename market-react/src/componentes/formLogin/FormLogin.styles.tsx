@@ -13,6 +13,10 @@ export const FormInput = styled.input`
     color: #ff0081;
   }
 `;
+export const ErrorMessage = styled.p`
+  color: red;
+  margin-top: 10px;
+`;
 
 export const BtnComprar = styled.button`
   font-family: "Helvetica", "Arial", sans-serif;

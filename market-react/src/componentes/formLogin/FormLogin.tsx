@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FormInput, BtnComprar, StyledCancelButton, StyledLink, AlertMessage, Container, Logo } from "./FormLogin.styles";
+import { FormInput, BtnComprar, StyledCancelButton, StyledLink, AlertMessage, Container, Logo, ErrorMessage } from "./FormLogin.styles";
 import ModalOverlay from "../modalOverlay/ModalOverlay";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/authContext.tsx/authContext";
@@ -14,6 +14,8 @@ const FormLogin: React.FC  = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [email, setEmail] = useState("");
+  
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -30,7 +32,14 @@ const FormLogin: React.FC  = () => {
   };
 
   const handleSend = () => {
-    setShowAlert(true);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Por favor, ingrese un correo válido.");
+      setShowAlert(false);
+    } else {
+      setError("");
+      setShowAlert(true);
+    }
   };
 
   const validateForm = () => {
@@ -112,11 +121,16 @@ const FormLogin: React.FC  = () => {
         <ModalOverlay onClose={closeModal}>
           <h2>Restablecer Contraseña</h2>
           <p>Ingresa tu correo electrónico para recibir un enlace de restablecimiento.</p>
-          <FormInput type="email" placeholder="Correo electrónico" />
+          <FormInput
+        type="email"
+        placeholder="Correo electrónico"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
           <BtnComprar onClick={handleSend}>Enviar</BtnComprar>
-          {showAlert && (
-            <AlertMessage>Se envió la información al correo ingresado.</AlertMessage>
-          )}
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+      {showAlert && <AlertMessage>Se envió la información al correo ingresado.</AlertMessage>}
+        
           <StyledCancelButton onClick={closeModal}>Cancelar</StyledCancelButton>
         </ModalOverlay>
       )}
