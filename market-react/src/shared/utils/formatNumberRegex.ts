@@ -1,3 +1,4 @@
+// test??
 export const formatPrice = (price: string | number): string => {
     const numericPrice = parseFloat(
       price.toString().replace(/[^\d.-]/g, "") 
