@@ -13,6 +13,7 @@ export const RoutesComponent = () => {
 
   return (
     <Routes>
+      {/* // la pagina de inicio debe ser protegida seg'un el requerimiento */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route
