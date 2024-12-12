@@ -1,3 +1,4 @@
+// hay que separarlos en archivos son funcionalidades diferentes
 import { productMock, productMock2 } from "../../../__mocks__/datamock";
 import { Product } from "../../../domain/products";
 import { filterProducts } from "../filterByProducts";
